@@ -3,10 +3,25 @@ import bcrypt
 import re
 import sqlite3
 import os
+import bottle
+import sys
 
 
 db = sqlite3.connect('main.db')
 cursor = db.cursor()
+
+# add your project directory to the sys.path
+# localhost
+project_home = u'/home/melo/www-data/html/teamnaijacrawl_python'
+
+
+if project_home not in sys.path:
+    sys.path = [project_home] + sys.path
+
+# make sure the default templates directory is known to Bottle
+templates_dir = os.path.join(project_home, 'templates/')
+if templates_dir not in bottle.TEMPLATE_PATH:
+    bottle.TEMPLATE_PATH.insert(0, templates_dir)
 
 
 @route('/')
@@ -18,7 +33,7 @@ def dashboard():
     transact = cursor.execute(
         'SELECT fullname FROM user WHERE id = ?', (user_id,))
     result = cursor.fetchone()
-    return template('templates/dashboard.html', name=result[0])
+    return template('dashboard.html', name=result[0])
 
 
 @route('/logout')
@@ -33,7 +48,7 @@ def logout():
 def login():
     if request.get_cookie('user_id', secret='user_id'):
         return redirect('/')
-    return template('templates/login.html')
+    return template('login.html')
 
 
 @route('/login', method='POST')
@@ -69,7 +84,7 @@ def signup():
         print('Table Created')
     except:
         print('cannot create table')
-    return template('templates/register.html')
+    return template('register.html')
 
 
 @route('/signup', method='POST')
