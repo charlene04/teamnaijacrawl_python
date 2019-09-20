@@ -1,0 +1,163 @@
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(../fonts/Montserrat-Bold.otf);
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../fonts/Montserrat-Regular.otf);
+}
+@font-face{
+    font-family: Montserrat-Medium;
+    src: url(../fonts/Montserrat-Medium.otf);
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: Montserrat-Bold;
+}
+p{
+    font-family: Montserrat-Regular;
+}
+
+/* Header Navigation styling */
+.navbar-nav .nav-item a {
+    font-family: Montserrat-Medium;
+    font-weight: 600;
+    position: relative;
+}
+.navbar-nav .nav-item a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #EBE6DF;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: .5s ease-in-out;
+}
+.navbar-nav .nav-item a:hover::before{
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.navbar li{
+    font-size: 1.2rem;
+
+}
+/*header Navigation styling Ended*/
+
+/*index page style */
+
+header{
+    margin: 0%;
+}
+
+
+/* Main Index Page styles */
+
+main.main-section{
+    background-color: #EBE6DF;
+}
+
+
+
+/* Login Page Start */
+div.login-form{
+    width: 25rem;
+    margin: 2rem auto;
+    margin-top: 4.5rem;
+}
+.form-info{
+    position: relative;
+    top: -3.7rem;
+}
+.form-control-label{
+    font-size: 1.2rem;
+    color: #616366;
+}
+.lgn-btn{
+    width: 10rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+}
+.form-links a:hover{
+    text-decoration: none;
+}
+@media screen and (max-width:576px){
+    div.login-form{
+        width: 100%;
+    }
+}
+/* Login Page End */
+
+/* Register Page Start */
+div.register-form{
+    width: 25rem;
+    margin: 2rem auto;
+    margin-top: 4.5rem;
+}
+.form-info{
+    position: relative;
+    top: -3.7rem;
+}
+.form-control-label{
+    font-size: 1.2rem;
+    color: #616366;
+}
+.rgt-btn{
+    width: 10rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+}
+.form-links a:hover{
+    text-decoration: none;
+}
+@media screen and (max-width:576px){
+    div.register-form{
+        width: 100%;
+    }
+}
+/* Register Page End */
+
+/*Dashboard styling*/
+.welcome-message{
+    font-size: 1.3rem;
+}
+.logout-btn{
+    font-size: 1.3rem;
+}
+/*Dashboard styling end*/
+
+/*Footer Links*/
+.foot-link.login{
+    background: transparent;
+    border: .04rem solid rgb(109, 109, 109);
+    font-weight: 400.70;
+}
+.foot-link.signup{
+    background: #9c27b0;
+    font-weight: 400.70;
+}
+.foot-link.login:hover{
+    background: rgb(95, 93, 93);
+    transition: .4s;
+}
+.foot-link.signup:hover{
+    background: #6f1c7e;
+    transition: .4s;
+}
+.footer-text{
+    background-color: #2a2b2e!important;
+    width: 100%
+}
+.footer-links a{
+    font-family: Montserrat-Medium;
+    font-size: .8rem;
+    font-weight: 500;
+}
+/*footer links end*/
