@@ -1,7 +1,9 @@
-from bottle import route, run, response, redirect, request, template, static_file
+from bottle import route, run, response, redirect, request, template, static_file, default_app
 import bcrypt
 import re
 import sqlite3
+import os
+
 
 db = sqlite3.connect('main.db')
 cursor = db.cursor()
@@ -119,4 +121,8 @@ def static(filepath):
     return static_file(filepath, root='./assets/')
 
 
+# localhost
 run(reloader=True, debug=True)
+
+# pythonAnyWhere
+#application = default_app()
